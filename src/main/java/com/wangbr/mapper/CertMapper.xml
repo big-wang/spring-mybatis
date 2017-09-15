@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wangbr.mapper.ICertRepository">
+	<select id="qryCert" resultType="com.wangbr.entity.CertEntity">
+		select * from cert
+	</select>
+	<insert id="insertCert" parameterType="com.wangbr.entity.CertEntity">
+		insert into cert (remark,name) values(#{remark},#{name})
+	</insert>
+</mapper>
