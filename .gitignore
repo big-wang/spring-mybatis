@@ -1,0 +1,12 @@
+*.class
+ *.classpath
+ *.project 
+target
+.settings
+.metadata
+.idea
+.iml
+/mm.iml
+ 
+/.classpath
+/.project
