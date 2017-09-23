@@ -1,12 +1,8 @@
 *.class
  *.classpath
  *.project 
-target
+/target
 .settings
 .metadata
-.idea
-.iml
-/mm.iml
- 
-/.classpath
-/.project
+*.idea
+*.iml

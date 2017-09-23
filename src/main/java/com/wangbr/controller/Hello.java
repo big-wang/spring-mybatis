@@ -24,9 +24,7 @@ public class Hello  {
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	@ResponseBody
 	public String getUser(HelloModel hello) throws Exception {
-		List<CertEntity> qryCerts = certRepo.qryCert();
-		CertEntity certEntity = qryCerts.get(0);
-		testService.insertTo();
+		
 		return "王";
 	}
 	public ICertRepository getCertRepo() {
