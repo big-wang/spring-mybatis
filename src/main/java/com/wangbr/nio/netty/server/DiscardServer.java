@@ -38,12 +38,9 @@ public class DiscardServer {
                     .option(ChannelOption.SO_BACKLOG, 128)          // (5)
                     .childOption(ChannelOption.SO_KEEPALIVE, true); // (6)
 
-            // Bind and start to accept incoming connections.
+            // 绑定端口
             ChannelFuture f = b.bind(port).sync(); // (7)
-
-            // Wait until the server socket is closed.
-            // In this example, this does not happen, but you can do that to gracefully
-            // shut down your server.
+            //等待调用
             f.channel().closeFuture().sync();
         } finally {
             workerGroup.shutdownGracefully();
