@@ -1,4 +1,4 @@
-package com.wangbr.Model;
+package com.wangbr.model;
 
 public class HelloModel {
 	
