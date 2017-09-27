@@ -1,6 +1,8 @@
 package com.wangbr.nio.netty.server;
 
-import com.wangbr.nio.netty.handler.DiscardServerHandler;
+import com.wangbr.nio.netty.handler.DiscardHandler;
+import com.wangbr.nio.netty.handler.PrintInboundMsgHandler;
+import com.wangbr.nio.netty.handler.PrintOutboundMsgHandler;
 import io.netty.bootstrap.ServerBootstrap;
 
 import io.netty.channel.ChannelFuture;
@@ -32,7 +34,9 @@ public class DiscardServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() { // (4)
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(new DiscardServerHandler());
+                            ch.pipeline().addLast(new PrintOutboundMsgHandler())
+                                    .addLast(new PrintInboundMsgHandler());
+
                         }
                     })
                     .option(ChannelOption.SO_BACKLOG, 128)          // (5)
